@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+.theme-toggle-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.theme-toggle {
+    position: absolute;
+    font-size: 48px;
+    line-height: 1;
+    top: 0px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.theme-toggle-input:checked ~ main .form-card {
+    background-color: #1f1f28;
+    color: #f1f1f1;
+    border-color: #343444;
+}
+
+.theme-toggle-input:checked ~ main .form-card input,
+.theme-toggle-input:checked ~ main .form-card select {
+    background-color: #2a2a36;
+    color: #ffffff;
+    border-color: #343444;
+}
+
+.header {
+    max-width: 500px;
+    margin: 0 auto 16px;
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.form-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px 24px 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.form-field label {
+    margin-bottom: 4px;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="number"],
+.form-card input[type="date"],
+.form-card input[type="color"],
+.form-card select {
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 6px 8px;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+}
+
+.form-card input[type="color"] {
+    height: 34px;
+    padding: 0;
+}
+
+.fieldset-publication {
+    border: 1px solid #c7c7c7;
+    padding: 10px 10px 8px;
+    margin: 4px 0 12px;
+    font-size: 14px;
+}
+
+.fieldset-publication legend {
+    padding: 0 4px;
+}
+
+.radio-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2bb24c;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #239743;
+}
+
+.submit-btn,
+input[type="radio"],
+input[type="checkbox"],
+select,
+input[type="color"],
+label[for="pub-yes"],
+label[for="pub-no"],
+label[for="terms"] {
+    cursor: pointer;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie - Lab 1</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="main">
+    <div class="container">
+        <h1>Tymoteusz Dzierżawski</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="login.html">Logowanie</a></li>
+                <li><a href="konkurs.html">Konkurs plastyczny</a></li>
+                <li><a href="uwagi.html">Uwagi o formularzach</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="narrow">
+        <h2>Logowanie</h2>
+        <form class="form-login" action="https://httpbin.org/post" method="post">
+            <div class="form-row">
+                <label for="login">Login / e-mail</label>
+                <input type="text" id="login" name="login" required
+                       autocomplete="username">
+            </div>
+
+            <div class="form-row">
+                <label for="password">Hasło</label>
+                <input type="password" id="password" name="password" required
+                       autocomplete="current-password">
+            </div>
+
+            <div class="form-row form-row-inline">
+                <label>
+                    <input type="checkbox" name="remember" value="1">
+                    Zapamiętaj mnie
+                </label>
+                <a class="small-link" href="#">Nie pamiętam hasła</a>
+            </div>
+
+            <div class="form-row">
+                <button type="submit" class="btn-primary">
+                    Zaloguj się
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+</body>
+</html>
