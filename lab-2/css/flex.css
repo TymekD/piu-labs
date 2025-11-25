@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+}
+
+.theme-picker {
+    background-color: yellow;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 4px solid orange;
+    display: inline-block;
+}
+
+.theme-picker label {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+/*theme picker style*/
+label:has(input:checked) {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.06));
+    border: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.container {
+    background-color: yellow;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 4px solid orange;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.item {
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    flex: 1 0 120px;
+    min-width: 80px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Blue theme */
+header:has(input[value="blue"]:checked) ~ .container {
+    --cols-gap: 0.75rem;
+    gap: var(--cols-gap);
+    justify-content: space-between;
+}
+
+/*each block has 32% width*/
+header:has(input[value="blue"]:checked) ~ .container .item {
+    background-color: #2563eb; 
+    color: #fff;
+    border: 4px solid #1e3a8a;
+    flex: 0 0 32%;
+    max-width: 32%;
+    margin: 0;
+}
+
+/*last block aligned to the right*/
+header:has(input[value="blue"]:checked) ~ .container .item:nth-child(5) {
+    margin-left: auto; 
+}
+
+/*"mobile" layout for blue theme*/
+@media (max-width: 1024px) {
+    header:has(input[value="blue"]:checked) ~ .container {
+        display: flex;
+        flex-direction: column; /*blocks in 1 column*/
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    header:has(input[value="blue"]:checked) ~ .container .item {
+        flex: 0 0 auto;
+        width: 100%;
+        margin: 0;
+        max-width: none;
+    }
+
+    /*last block aligned normally*/
+    header:has(input[value="blue"]:checked) ~ .container .item:nth-child(5) {
+        margin-left: 0;
+    }
+}
+
+/* Red theme */
+header:has(input[value="red"]:checked) ~ .container .item {
+    background-color: #dc2626; 
+    color: #fff;
+    border: 6px solid #7f1d1d;
+}
+
+/*blocks evenly spaced*/
+header:has(input[value="red"]:checked) ~ .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    gap: 0.5rem;
+}
+
+/*first block is bigger and centered*/
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(1) {
+    order: 3;
+    flex: 1 1 auto;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*other blocks order*/
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(2) {
+    order: 1;
+}
+
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(3) {
+    order: 2;
+}
+
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(4) {
+    order: 4;
+}
+
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(5) {
+    order: 5;
+}
+
+/*block 1 extra text*/
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(1)::after {
+    content: "(Jestem większy i na środku)";
+    display: block;
+    font-size: 0.65em;
+    font-weight: normal;
+    margin-top: 0.4em;
+    text-align: center;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+/*other blocks style*/
+header:has(input[value="red"]:checked) ~ .container .item:nth-child(n+2) {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    padding: 0.75rem 0.5rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*"mobile" layout for red theme*/
+@media (max-width: 1024px) {
+    header:has(input[value="red"]:checked) ~ .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    /*1 row*/
+    header:has(input[value="red"]:checked) ~ .container .item:nth-child(2),
+    header:has(input[value="red"]:checked) ~ .container .item:nth-child(3) {
+        flex: 0 0 calc(50% - 0.25rem); /*2 blocks 50% width - 1/2 gap each*/
+    }
+
+    /*block 1 in entire row*/
+    header:has(input[value="red"]:checked) ~ .container .item:nth-child(1) {
+        flex: 0 0 100%;
+        order: 3;
+    }
+    /*3 row*/
+    header:has(input[value="red"]:checked) ~ .container .item:nth-child(4),
+    header:has(input[value="red"]:checked) ~ .container .item:nth-child(5) {
+        flex: 0 0 calc(50% - 0.25rem);
+    }
+}
+
+/* Green theme */
+header:has(input[value="green"]:checked) ~ .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/*blocks with different flex grow*/
+header:has(input[value="green"]:checked) ~ .container .item {
+    background-color: #059669; 
+    color: #fff;
+    border: 6px solid #065f46;
+    flex: 1 1 0;
+    margin: 0; 
+}
+
+/*1st biggest row*/
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(1) {
+    flex: 5 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding-inline: 0.75rem;        
+}
+
+/*1st block emojis*/
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(1)::before,
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(1)::after {
+    content: "😃";
+    font-size: 1em;          
+    transform: scale(2);     
+    line-height: 1;
+}
+
+/*other blocks flex grow*/
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(2) {
+    flex: 4 1 0;
+}
+
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(3) {
+    flex: 3 1 0;
+}
+
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(4) {
+    flex: 2 1 0;
+}
+
+header:has(input[value="green"]:checked) ~ .container .item:nth-child(5) {
+    flex: 1 1 0;
+}
+
+/*"mobile" layout for green theme*/
+@media (max-width: 1024px) {
+    header:has(input[value="green"]:checked) ~ .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;  
+        gap: 0.5rem;
+    }
+
+    header:has(input[value="green"]:checked) ~ .container .item {
+        flex: 0 0 auto;
+    }
+    /*order and width for each block*/
+    header:has(input[value="green"]:checked) ~ .container .item:nth-child(5) {
+        order: 1;
+        width: 30%;
+    }
+
+    header:has(input[value="green"]:checked) ~ .container .item:nth-child(4) {
+        order: 2;
+        width: 45%;
+    }
+
+    header:has(input[value="green"]:checked) ~ .container .item:nth-child(3) {
+        order: 3;
+        width: 60%;
+    }
+
+    header:has(input[value="green"]:checked) ~ .container .item:nth-child(2) {
+        order: 4;
+        width: 80%;
+    }
+
+    header:has(input[value="green"]:checked) ~ .container .item:nth-child(1) {
+        order: 5;
+        width: 100%;
+    }
+}
