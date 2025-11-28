@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria zdjęć</title>
+    <link rel="stylesheet" href="css/galeria.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="wrapper">
+        <h1>Responsywna galeria</h1>
+        <p class="lede">
+          Zestaw dziesięciu zoptymalizowanych fotografii o stałych proporcjach.
+          Przeglądaj w jednej kolumnie na małych ekranach i w dwóch na dużych.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrapper">
+      <section class="gallery" aria-label="Galeria zdjęć">
+        <figure>
+          <img
+            src="img/1-500.jpg"
+            srcset="img/1-500.jpg 500w, img/1-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Lawendowa kompozycja zdjęcia numer jeden"
+            loading="lazy"
+          />
+          <figcaption>Foto 01 &middot; Lawendowe poranki</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/2-500.jpg"
+            srcset="img/2-500.jpg 500w, img/2-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Energetyczny róż zdjęcia numer dwa"
+            loading="lazy"
+          />
+          <figcaption>Foto 02 &middot; Różowa energia</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/3-500.jpg"
+            srcset="img/3-500.jpg 500w, img/3-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Purpurowe tony zdjęcia numer trzy"
+            loading="lazy"
+          />
+          <figcaption>Foto 03 &middot; Fioletowe fale</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/4-500.jpg"
+            srcset="img/4-500.jpg 500w, img/4-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Głębokie indygo zdjęcia numer cztery"
+            loading="lazy"
+          />
+          <figcaption>Foto 04 &middot; Wieczorny bez</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/5-500.jpg"
+            srcset="img/5-500.jpg 500w, img/5-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Chłodny błękit zdjęcia numer pięć"
+            loading="lazy"
+          />
+          <figcaption>Foto 05 &middot; Oceaniczny spokój</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/6-500.jpg"
+            srcset="img/6-500.jpg 500w, img/6-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Turkusowa geometria zdjęcia numer sześć"
+            loading="lazy"
+          />
+          <figcaption>Foto 06 &middot; Turkusowa geometria</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/7-500.jpg"
+            srcset="img/7-500.jpg 500w, img/7-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Szmaragdowe akcenty zdjęcia numer siedem"
+            loading="lazy"
+          />
+          <figcaption>Foto 07 &middot; Szmaragdowa ostoja</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/8-500.jpg"
+            srcset="img/8-500.jpg 500w, img/8-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Pastelowa mięta zdjęcia numer osiem"
+            loading="lazy"
+          />
+          <figcaption>Foto 08 &middot; Miętowa lekkość</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/9-500.jpg"
+            srcset="img/9-500.jpg 500w, img/9-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Limonkowe światło zdjęcia numer dziewięć"
+            loading="lazy"
+          />
+          <figcaption>Foto 09 &middot; Limonkowa świeżość</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="img/10-500.jpg"
+            srcset="img/10-500.jpg 500w, img/10-1000.jpg 1000w"
+            sizes="(min-width: 1600px) 1000px, (min-width: 1200px) 500px, (min-width: 800px) 1000px, 500px"
+            alt="Złota poświata zdjęcia numer dziesięć"
+            loading="lazy"
+          />
+          <figcaption>Foto 10 &middot; Złoty finał</figcaption>
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>
