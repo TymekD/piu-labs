@@ -1,0 +1,214 @@
+body {
+  background: #f3f5f9;
+  color: #1f2a37;
+}
+
+.product-showcase {
+  max-width: min(calc(500px + 300px + 80px), 96vw);
+  margin: 1.5rem auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.product-panel {
+  position: relative;
+}
+
+.product-panel > input[name="variant"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.product-showcase h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.product-card {
+  --accent: #2b6cb0;
+  --accent-strong: #274083;
+  --surface: #eff4ff;
+  --badge-bg: #2b6cb0;
+  --photo: url("../polo/polo_b.png");
+  border-radius: 20px;
+  padding: clamp(1rem, 4vw, 1.5rem);
+  background: var(--surface);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-frame {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: stretch;
+  justify-content: center;
+}
+
+.product-photo {
+  flex: 1 1 500px;
+  max-width: min(500px, 100%);
+  aspect-ratio: 1;
+  border-radius: 16px;
+  border: 2px solid var(--accent);
+  background-image: var(--photo);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.65);
+}
+
+.product-info {
+  flex: 1 1 300px;
+  max-width: min(300px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.25rem 0;
+}
+
+.product-info header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.product-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.product-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: #fff;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.product-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-block span:first-child {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8793a5;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.color-list,
+.size-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+  background: var(--swatch, #ccc);
+  cursor: pointer;
+}
+
+.size-pill {
+  min-width: 40px;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #fff;
+}
+
+.size-pill.is-active {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.product-buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.4rem;
+}
+
+.cta {
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.65rem 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+}
+
+#variant-blue:checked ~ .product-card {
+  --accent: #1c6edc;
+  --accent-strong: #0a3f8c;
+  --surface: #eef5ff;
+  --badge-bg: #1c6edc;
+  --photo: url("../polo/polo_b.png");
+}
+
+#variant-red:checked ~ .product-card {
+  --accent: #d63b3b;
+  --accent-strong: #951919;
+  --surface: #fff1f0;
+  --badge-bg: #c71f1f;
+  --photo: url("../polo/polo_r.png");
+}
+
+#variant-green:checked ~ .product-card {
+  --accent: #1f9d55;
+  --accent-strong: #0b5f32;
+  --surface: #f1fff7;
+  --badge-bg: #1f9d55;
+  --photo: url("../polo/polo_g.png");
+}
+
+#variant-yellow:checked ~ .product-card {
+  --accent: #f1c40f;
+  --accent-strong: #986c00;
+  --surface: #fff9e5;
+  --badge-bg: #d38c0e;
+  --photo: url("../polo/polo_y.png");
+}
+
+#variant-blue:checked ~ .product-card label[for="variant-blue"],
+#variant-red:checked ~ .product-card label[for="variant-red"],
+#variant-green:checked ~ .product-card label[for="variant-green"],
+#variant-yellow:checked ~ .product-card label[for="variant-yellow"] {
+  box-shadow: 0 0 0 3px var(--accent);
+}

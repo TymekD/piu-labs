@@ -2,11 +2,63 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 3</title>
+    <title>Lab 3 – Karta produktu</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <main class="product-showcase">
+      <h1>Koszulka Polo – wybierz swój kolor</h1>
+
+      <section class="product-panel">
+        <input type="radio" name="variant" id="variant-blue" checked />
+        <input type="radio" name="variant" id="variant-red" />
+        <input type="radio" name="variant" id="variant-green" />
+        <input type="radio" name="variant" id="variant-yellow" />
+
+        <article class="product-card">
+          <div class="product-frame">
+            <div class="product-photo" role="img" aria-live="polite"></div>
+            <div class="product-info">
+              <header>
+                <p class="product-label">Koszulka Polo</p>
+                <span class="product-badge">Promocja!</span>
+              </header>
+              <p class="product-desc">
+                Lekka koszulka z przewiewnej bawełny. Idealna na co dzień oraz
+                do casualowych stylizacji biurowych.
+              </p>
+
+              <div class="product-options">
+                <div class="option-block">
+                  <span>Kolor</span>
+                  <div class="color-list" role="list">
+                    <label class="color-swatch" for="variant-blue" aria-label="Niebieski" style="--swatch: #1c6edc"></label>
+                    <label class="color-swatch" for="variant-red" aria-label="Czerwony" style="--swatch: #d92626"></label>
+                    <label class="color-swatch" for="variant-green" aria-label="Zielony" style="--swatch: #1f9d55"></label>
+                    <label class="color-swatch" for="variant-yellow" aria-label="Żółty" style="--swatch: #f1c40f"></label>
+                  </div>
+                </div>
+
+                <div class="option-block">
+                  <span>Rozmiar</span>
+                  <div class="size-list">
+                    <span class="size-pill">S</span>
+                    <span class="size-pill is-active">M</span>
+                    <span class="size-pill">L</span>
+                    <span class="size-pill">XL</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-buy">
+                <strong class="price">59,99 zł</strong>
+                <button class="cta">🧺 Do koszyka</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
