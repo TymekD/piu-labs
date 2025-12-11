@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 30px;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #4b5563;
+}
+
+/* PANEL PRZYCISKÓW */
+
+.controls {
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Delikatnie „ładniejsze” przyciski – zaokrąglenie + animacja */
+
+button {
+  padding: 10px 18px;
+  min-width: 170px;
+  cursor: pointer;
+  border-radius: 9999px;             /* mocno zaokrąglone rogi */
+  border: 1px solid #d1d5db;
+  background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #111827;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-position 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.15s ease;
+  background-size: 150% 150%;
+}
+
+button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  background-position: 100% 0;
+  opacity: 0.96;
+}
+
+button:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  opacity: 0.9;
+}
+
+button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* LICZNIKI */
+
+.counters {
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+.counters strong {
+  font-size: 1rem;
+}
+
+/* PLANSZA Z KSZTAŁTAMI */
+
+.board-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.board {
+  margin: 16px auto 8px;
+  min-height: 180px;
+  border: 2px dashed #d1d5db;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+/* Kształty */
+
+.shape {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.2s ease;
+  border: 3px solid #111827;
+}
+
+.shape:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.square {
+  border-radius: 8px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+/* Opis */
+
+.note {
+  color: #4b5563;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.note code {
+  background: #e5e7eb;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
